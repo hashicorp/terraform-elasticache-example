@@ -32,10 +32,12 @@ var configEndpoint = flag.String("c", "", "configuration endpoint")
 var method = flag.String("m", "", "method GET, SET")
 
 func main() {
+	fmt.Println("")
 	flag.Parse()
 
 	nodes := getNodes(*configEndpoint)
 	fmt.Println("Fetched Nodes from configuration endpoint", nodes)
+	fmt.Println("")
 
 	mc := memcache.New(nodes.ToString()...)
 

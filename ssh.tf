@@ -1,25 +1,3 @@
-module "vpc" {
-  source = "github.com/nicholasjackson/terraform-modules/vpc"
-
-  aws_region            = "${var.aws_region}"
-  aws_access_key_id     = "${var.aws_access_key_id}"
-  aws_secret_access_key = "${var.aws_secret_access_key}"
-  namespace             = "${var.namespace}"
-}
-
-module "elasticache" {
-  source = "github.com/nicholasjackson/terraform-modules/elasticache"
-
-  aws_region            = "${var.aws_region}"
-  aws_access_key_id     = "${var.aws_access_key_id}"
-  aws_secret_access_key = "${var.aws_secret_access_key}"
-  namespace             = "${var.namespace}"
-  cluster_id            = "${var.cluster_id}"
-
-  subnets = "${module.vpc.subnets}"
-  vpc_id  = "${module.vpc.id}"
-}
-
 # Get the list of official Canonical Ubuntu 16.04 AMIs
 data "aws_ami" "ubuntu-1604" {
   most_recent = true
@@ -51,8 +29,8 @@ resource "aws_instance" "ssh_host" {
   instance_type = "t2.nano"
   key_name      = "${aws_key_pair.elasticcache.id}"
 
-  subnet_id       = "${element(module.vpc.subnets,0)}"
-  security_groups = ["${module.elasticache.security_group}"]
+  subnet_id       = "${element(aws_subnet.default.*.id,0)}"
+  security_groups = ["${aws_security_group.default.id}"]
   user_data       = "${data.template_file.startup.rendered}"
 
   tags = "${map(
