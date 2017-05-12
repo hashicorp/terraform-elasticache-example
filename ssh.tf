@@ -29,9 +29,9 @@ resource "aws_instance" "ssh_host" {
   instance_type = "t2.nano"
   key_name      = "${aws_key_pair.elasticcache.id}"
 
-  subnet_id       = "${element(aws_subnet.default.*.id,0)}"
-  security_groups = ["${aws_security_group.default.id}"]
-  user_data       = "${data.template_file.startup.rendered}"
+  subnet_id              = "${element(aws_subnet.default.*.id,0)}"
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  user_data              = "${data.template_file.startup.rendered}"
 
   tags = "${map(
     "Name", "${var.namespace}-ssh-host",
