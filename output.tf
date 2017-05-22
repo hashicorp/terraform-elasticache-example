@@ -1,13 +1,5 @@
-output "cluster_address" {
-  value = "${aws_elasticache_cluster.default.cluster_address}"
-}
-
-output "configuration_endpoint" {
-  value = "${aws_elasticache_cluster.default.configuration_endpoint}"
-}
-
-output "cache_nodes" {
-  value = ["${aws_elasticache_cluster.default.cache_nodes}"]
+output "configuration_endpoint_address" {
+  value = "${aws_elasticache_replication_group.default.configuration_endpoint_address}"
 }
 
 output "ssh_host" {

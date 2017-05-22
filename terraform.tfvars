@@ -1,5 +1,5 @@
 namespace = "elasticache-tutorial"
 
-cluster_id = "test-cluster"
+cluster_id = "redis-cluster"
 
-cache_nodes = 3
+node_groups = 4

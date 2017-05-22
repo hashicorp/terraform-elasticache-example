@@ -21,7 +21,7 @@ variable "public_key_path" {
   default     = "~/.ssh/id_rsa.pub"
 }
 
-variable "cache_nodes" {
-  description = "Number of cache nodes to create in the cluster"
+variable "node_groups" {
+  description = "Number of nodes groups to create in the cluster"
   default     = 3
 }
