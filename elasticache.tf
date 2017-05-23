@@ -30,6 +30,9 @@ resource "aws_elasticache_replication_group" "default" {
   port                 = 6379
   parameter_group_name = "default.redis3.2.cluster.on"
 
+  snapshot_retention_limit = 5
+  snapshot_window          = "00:00-05:00"
+
   subnet_group_name = "${aws_elasticache_subnet_group.default.name}"
 
   automatic_failover_enabled = true
