@@ -33,10 +33,10 @@ resource "aws_elasticache_replication_group" "default" {
   snapshot_retention_limit = 5
   snapshot_window          = "00:00-05:00"
 
-  subnet_group_name = "${aws_elasticache_subnet_group.default.name}"
+  //snapshot_name            = "automatic.redis-cluster-2017-05-26-00-00"
 
+  subnet_group_name          = "${aws_elasticache_subnet_group.default.name}"
   automatic_failover_enabled = true
-
   cluster_mode {
     replicas_per_node_group = 1
     num_node_groups         = "${var.node_groups}"
