@@ -126,7 +126,7 @@ resource "aws_elasticache_replication_group" "default" {
   replication_group_id          = "${var.cluster_id}"
   replication_group_description = "Redis cluster for Hashicorp ElastiCache example"
  
-  node_type            = "cache.m1.small"
+  node_type            = "cache.m4.large"
   port                 = 6379
   parameter_group_name = "default.redis3.2.cluster.on"
  
