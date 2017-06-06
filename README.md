@@ -1,5 +1,5 @@
 # Managing Elasticache with Terraform
-Developers continue to pick Redis as their favorite NoSQL data store [Stack Overflow Developer Survey 2017](https://insights.stackoverflow.com/survey/2017#technology-most-loved-dreaded-and-wanted-databases) and Amazon ElastiCache provides an easy, fast, and highly available Redis on AWS.  ElastiCache Redis can be deployed via the AWS Console, AWS SDK, Amazon ElastiCache API, AWS CloudFormation and through deployment tools like Hashicorp Terraform.  In this blog post, we show how to easily deploy Amazon ElastiCache Redis with HashiCorp Terraform. 
+Developers continue to pick Redis as their favorite NoSQL data store [Stack Overflow Developer Survey 2017](https://insights.stackoverflow.com/survey/2017#technology-most-loved-dreaded-and-wanted-databases) and Amazon ElastiCache provides an easy, fast, and highly available Redis on AWS.  ElastiCache Redis can be deployed via the AWS Console, AWS SDK, Amazon ElastiCache API, AWS CloudFormation and through deployment tools like HashiCorp Terraform.  In this blog post, we show how to easily deploy Amazon ElastiCache Redis with HashiCorp Terraform. 
  
 This repository examines how to manage AWS ElastiCache with HashiCorp Terraform.  Amazon ElastiCache is a web service that allows for deploying, operating, and scaling an in-memory data store or cache and is often used to improve application performance by reading from a fast in-memory data store instead of a slower disk-based database. Currently, Elasticache supports two different engines:
 * Redis
@@ -7,7 +7,7 @@ This repository examines how to manage AWS ElastiCache with HashiCorp Terraform.
  
 ## Creating a Cluster
 We are going to create the following instances:
-* 6x ElastiCache nodes (cache.m1.small)
+* 6x ElastiCache nodes (cache.m4.large)
 * 1x   SSH host (t2.nano)
  
 We need to create an SSH host because the cluster is not accessible from the public internet, this will be attached to the same VPC so that we can test the cluster, this instance is fulfilling the role of your application server.
