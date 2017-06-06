@@ -66,7 +66,7 @@ To test the cluster, ssh into the instance listed in the Terraform output with t
 ssh ubuntu@52.30.43.172
 ```
  
-To connect to an ElastiCache cluster, use the configuration endpoint provided by AWS in the Terraform output. This will will return a list of active nodes.  We can use these nodes to interact with the cluster.  To see this in operation run the following command in your ssh session, replacing the parameter value for `-h` with your cluster's configuration endpoint.  Then execute the `CLUSTER NODES` command to show the cluster details.  A full list of commands are available in the [Redis Documentation](https://redis.io/commands)
+To connect to an ElastiCache cluster, use the configuration endpoint provided by AWS in the Terraform output. This will will return a list of active nodes.  We can use these nodes to interact with the cluster. To see this in operation run the following command in your ssh session, replacing the parameter value for `-h` with your cluster's configuration endpoint.  Then execute the `CLUSTER NODES` command to show the cluster details.  A full list of commands are available in the [Redis Documentation](https://redis.io/commands)
  
 ```bash
 $ redis-cli -h tfrediscluster.ua5mrp.clustercfg.euw1.cache.amazonaws.com -p 6379
@@ -160,11 +160,9 @@ In this example snapshots have been enabled with a 5 day retention period, the A
  
 ![elasticache cluster backups](https://hyzxph.media.zestyio.com/terraform_elasticache_cluster_backups.png)
  
-If we ever need to restore the cluster from a snapshot we can set the `snapshot_name` attribute to the name of the snapshot and when the the new cluster is created the snapshot will be restored automatically.  
- 
  
 ## Destroying the Cluster
-A running cluster incurs costs, so do not forget to destroy your cluster! Destroy the cluster by running  `terraform destroy` in the terminal.
+You would almost never need to destroy your cluster in production, however a running cluster incurs costs, and if you are testing out this configuration and not creating a production cluster do not forget to destroy it! Destroy the cluster by running `terraform destroy` in the terminal.
  
 ```
 $ terraform destroy
