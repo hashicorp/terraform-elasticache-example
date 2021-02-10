@@ -10,18 +10,30 @@ variable "cidr_blocks" {
 
 variable "namespace" {
   description = "Default namespace"
+  default     = "elasticache-tutorial"
 }
 
 variable "cluster_id" {
   description = "Id to assign the new cluster"
+  default     = "redis-cluster"
 }
 
 variable "public_key_path" {
   description = "Path to public key for ssh access"
-  default     = "~/.ssh/id_rsa.pub"
+  default     = "~/.ssh/rmx-test.pub"
 }
 
 variable "node_groups" {
   description = "Number of nodes groups to create in the cluster"
   default     = 3
+}
+
+variable "node_type" {
+  description = "Type of Elasticache node to use"
+  default     = "cache.t2.micro"
+}
+
+variable "port" {
+  description = "Default port to be used by Redis"
+  default     = 6379
 }
