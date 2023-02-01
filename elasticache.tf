@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 resource "aws_security_group" "default" {
   name_prefix = "${var.namespace}"
   vpc_id      = "${aws_vpc.default.id}"

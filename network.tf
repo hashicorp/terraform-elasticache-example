@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 # Create a VPC to launch our instances into
 resource "aws_vpc" "default" {
   cidr_block           = "${var.vpc_cidr_block}"
