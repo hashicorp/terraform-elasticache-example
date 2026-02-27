@@ -170,4 +170,4 @@ $ terraform destroy
 Destroy complete! Resources: 13 destroyed.
 ```
  
-For more information on all of the features, please see the [Terraform ElastiCache documentation](https://www.terraform.io/docs/providers/aws/r/elasticache_cluster.html#).
+For more information on all of the features, please see the [Terraform ElastiCache documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster).
