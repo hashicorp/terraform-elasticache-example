@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2017, 2026
+
 variable "vpc_cidr_block" {
   description = "The top-level CIDR block for the VPC."
   default     = "10.1.0.0/16"

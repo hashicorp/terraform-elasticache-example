@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2017, 2026
+
 output "configuration_endpoint_address" {
   value = "${aws_elasticache_replication_group.default.configuration_endpoint_address}"
 }

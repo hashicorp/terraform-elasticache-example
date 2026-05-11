@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2017, 2026
+
 resource "aws_security_group" "default" {
   name_prefix = "${var.namespace}"
   vpc_id      = "${aws_vpc.default.id}"

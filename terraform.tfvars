@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2017, 2026
+
 namespace = "elasticache-tutorial"
 
 cluster_id = "redis-cluster"
