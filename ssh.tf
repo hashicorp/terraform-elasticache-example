@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2017, 2026
+
 # Get the list of official Canonical Ubuntu 16.04 AMIs
 data "aws_ami" "ubuntu-1604" {
   most_recent = true
